@@ -1,0 +1,228 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    padding: 30px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.left_header {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.right_header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-right: 50px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.search_bar {
+    flex: 1;
+    height: 39px;
+    width: 600px;
+    border: 1px solid #E4E4E4;
+    border-radius: 40px;
+    padding: 0 15px;
+    background-color: #fff;
+    outline: none;
+}
+
+.menu {
+    width: 16px;
+    height: 16px;
+    opacity: 0.75;
+}
+
+.menu:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.sign_in {
+    border: 1px solid #4285f4;
+    background: #4285f4;
+    line-height: 30px;
+    padding: 0 12px;
+    border-radius: 2px;
+    height: 30px;
+}
+
+.sign_in a {
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.sign_in:hover {
+    cursor: pointer;
+}
+
+.mic {
+    width: 14px;
+    height: 20px;
+    position: relative;
+    right: 30px;
+}
+
+buttons{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 180px;
+    margin-right: 50px;
+}
+
+
+.header_button {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 20px;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 20px;
+    min-width: 38px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Body */
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 30px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.body_left{
+    margin-right: 150px;
+    margin-left: 30px;
+}
+
+.body_left h2{
+    color: #202124;
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: lighter;
+}
+
+.search_result {
+    display: flex;
+    flex-direction: column;
+}
+
+.search_result h2 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: -3px;
+    color: #1a0dab;
+}
+
+.search_result h2:hover{
+    text-decoration: underline;
+}
+
+p {
+    font-size: 15px;
+    line-height: 25px;
+    color: #333;
+}
+
+.about_section {
+    flex: 1;
+    padding: 20px;
+    margin-top: 50px;
+    
+}
+
+.about_section h2 {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.about_section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about_section ul li {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.about_section strong {
+    font-weight: bold;
+}
+
+.divider {
+    border: 0.5px solid #dadce0; 
+    margin: 30px;
+}
+
+img.dog-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 2px;
+}
+
+.breeds {
+    display: flex;
+    gap:30px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+.breeds img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.breeds .caption {
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.breeds .caption:hover {
+    text-decoration: underline;
+}
