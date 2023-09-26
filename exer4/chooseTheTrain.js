@@ -36,7 +36,16 @@ const railArray = await getRealTimeRailCoordinates();
  * DO NOT MODIFY railArray! You'll need it for later
  */
 function getKeysToArr(arrivals) {
-  // TODO
+  const firstElement = arrivals[0];
+    const keys = [];
+
+    for (const key in firstElement) {
+        if (firstElement.hasOwnProperty(key)) {
+            keys.push(key);
+        }
+    }
+
+    return keys;
 }
 
 /**
@@ -52,7 +61,13 @@ function getKeysToArr(arrivals) {
  * DO NOT MODIFY railArray! You'll need it for later
  */
 function getTrainComingIn1Minute(arrivals) {
-  // TODO
+  const arrivalsIn1Minute = [];
+    arrivals.forEach((arrival) => {
+        if (arrival.WAITING_TIME === '1 min') {
+            arrivalsIn1Minute.push(arrival);
+        }
+    });
+    return arrivalsIn1Minute;
 }
 
 /**
@@ -84,7 +99,12 @@ function getTrainComingIn1Minute(arrivals) {
  *
  */
 function updateLineColor(arrivals) {
-  // TODO
+  const filteredArrivals = arrivals.filter((arrival) => arrival.LINE === 'BLUE');
+    const deepCopyArrivals = filteredArrivals.map((arrival) => ({ ...arrival }));
+    deepCopyArrivals.forEach((arrival) => {
+        arrival.LINE = 'PINK';
+    });
+    return deepCopyArrivals;
 }
 
 console.log(getKeysToArr(railArray));
