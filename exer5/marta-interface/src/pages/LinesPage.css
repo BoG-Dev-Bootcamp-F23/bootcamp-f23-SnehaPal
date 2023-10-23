@@ -1,0 +1,43 @@
+.body {
+    display: flex;
+    flex-direction: row; /* Change to column to center vertically */
+    gap: 50px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px; 
+    margin-top: 10px;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #0A639C; 
+    margin-top: 10px;
+    margin-bottom: 20px; 
+}
+
+.martaButtons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.martaButton {
+    padding: 7px 45px;
+    background-color: none;
+    color: #0A639C;
+    border-color: #0A639C;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.martaButton:hover {
+    background-color: #095178;
+    color: white;
+}

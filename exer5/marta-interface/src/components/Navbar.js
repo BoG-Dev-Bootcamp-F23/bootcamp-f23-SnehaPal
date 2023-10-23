@@ -1,17 +1,20 @@
 import React from 'react';
-import stations from '../server/stationData';
+import stationData from '../server/stationData';
+import './Navbar.css'; // Import your CSS file
 
 export default function Navbar({ color }) {
-  const stations = stations[color.toLowerCase()]; // Get the stations for the selected line
+  const stations = stationData[color.toLowerCase()];
 
   return (
-    <div>
-      <h3>Stations for the {color} Line</h3>
-      <ul>
+    <div className="navbar-container">
+      <h3 className="heading">Select your starting station</h3>
+      <div className="station-list">
         {stations.map((station, index) => (
-          <li key={index}>{station}</li>
+          <div className="stationName" key={index}>
+            <span>{station}</span>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
