@@ -4,9 +4,9 @@
   align-items: center;
   padding: 10px;
   margin: 10px;
-  margin-right: 100vh;
-  width: 83%;
-  position: relative; /* Set position relative to create ::after element */
+  margin-bottom: -20px;
+  width: 123%;
+  position: relative;
 }
 
 .train::after {

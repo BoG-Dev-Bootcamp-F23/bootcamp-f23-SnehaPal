@@ -3,7 +3,8 @@ import "./Train.css"
 
 export default function Train({ trainData }) {
   const isOnTime = trainData.DELAY === "T0S";
-  const stationName = trainData.STATION.toLowerCase().replace(/\b\w/g, char => char.toUpperCase());
+  const departure = trainData.STATION.toLowerCase().replace(/\b\w/g, char => char.toUpperCase());
+  const destination = trainData.DESTINATION.toLowerCase().replace(/\b\w/g, char => char.toUpperCase());
   const lineColor = trainData.LINE.toLowerCase().replace(/\b\w/g, char => char.toUpperCase());
 
   return (
@@ -12,7 +13,7 @@ export default function Train({ trainData }) {
             <h1>M</h1>
             <div className='trainInfo'>
                 <div className='stationInfo'>
-                    <p>Midtown Station - {stationName}</p>     
+                    <p>{departure} - {destination} Station</p>     
                 </div>
                 <div className='otherInfo'>
                     <div className='lineColor' style={{ backgroundColor: trainData.LINE.toLowerCase() }}>{lineColor}</div>
