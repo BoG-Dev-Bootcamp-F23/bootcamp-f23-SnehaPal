@@ -31,23 +31,8 @@ h2::after {
     margin-bottom: 20px; 
 }
 
-.martaButtons {
+.right {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.martaButton {
-    padding: 7px 45px;
-    background-color: none;
-    color: #0A639C;
-    border-color: #0A639C;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.martaButton:hover {
-    background-color: #095178;
-    color: white;
-}
+    flex-direction: column;
+  }
+  

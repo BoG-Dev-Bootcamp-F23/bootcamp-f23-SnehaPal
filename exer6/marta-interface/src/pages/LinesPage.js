@@ -10,7 +10,14 @@ export default function LinesPage() {
   const [selectedStations, setSelectedStations] = useState([]);
   const [arrivalData, setArrivalData] = useState([]);
   const [stationData, setStationData] = useState([]);
-  const [loading, setLoading] = useState(true); // Initialize loading state to true
+  const [loading, setLoading] = useState(true);
+
+  const [showArrivingTrains, setShowArrivingTrains] = useState(true);
+  const [showScheduledTrains, setShowScheduledTrains] = useState(true);
+  const [isNorthboundActive, setIsNorthboundActive] = useState(true);
+  const [isSouthboundActive, setIsSouthboundActive] = useState(true);
+  const [isEastboundActive, setIsEastboundActive] = useState(true); 
+  const [isWestboundActive, setIsWestboundActive] = useState(true); 
 
   useEffect(() => {
     const arrivalUrl = `http://13.59.196.129:3001/arrivals/${currColor.toLowerCase()}`;
@@ -18,20 +25,23 @@ export default function LinesPage() {
       .then((response) => response.json())
       .then((data) => {
         setArrivalData(data);
-        setLoading(false); 
+        setLoading(false);
       });
 
     const stationUrl = `http://13.59.196.129:3001/stations/${currColor.toLowerCase()}`;
     fetch(stationUrl)
       .then((response) => response.json())
       .then((data) => setStationData(data));
-  }, [currColor, selectedStations]);
+  }, [currColor, selectedStations, showArrivingTrains, showScheduledTrains]);
+
+  // COLOR BAR FUNCTIONALITY
 
   const handleColorClick = (color) => {
     setCurrColor(color);
-    setLoading(true); 
+    setLoading(true);
   };
 
+  // NAVBAR FUNCTIONALITY
   const handleStationClick = (station) => {
     setSelectedStations((prevSelectedStations) => {
       if (prevSelectedStations.includes(station)) {
@@ -40,8 +50,38 @@ export default function LinesPage() {
         return [...prevSelectedStations, station];
       }
     });
-    setLoading(true); 
+    setLoading(true);
   };
+
+  // ARRIVING/SCHEDULED FUNCTIONALITY
+
+  const handleArrivingClick = () => {
+    setShowArrivingTrains(!showArrivingTrains);
+  };
+
+  const handleScheduledClick = () => {
+    setShowScheduledTrains(!showScheduledTrains);
+  };
+
+  // DIRECTION FUNCTIONALITY
+
+  const handleNorthClick = () => {
+    setIsNorthboundActive(!isNorthboundActive);
+  };
+
+  const handleSouthClick = () => {
+    setIsSouthboundActive(!isSouthboundActive);
+  };
+
+  const handleEastClick = () => {
+    setIsEastboundActive(!isEastboundActive);
+  };
+
+  const handleWestClick = () => {
+    setIsWestboundActive(!isWestboundActive);
+  };
+
+  // DISPLAY
 
   return (
     <div>
@@ -55,13 +95,29 @@ export default function LinesPage() {
           selectedStations={selectedStations}
         />
         {loading ? (
-          <div className="loading-screen">
-            Loading...
-          </div>
+          <div className="loading-screen">Loading...</div>
         ) : (
-          <div>
-            <MartaButtons color={currColor} />
-            <TrainList color={currColor} selectedStations={selectedStations} arrivalData={arrivalData} />
+          <div className="right">
+            <MartaButtons
+              color={currColor}
+              onArrivingClick={handleArrivingClick}
+              onScheduledClick={handleScheduledClick}
+              onNorthClick={handleNorthClick}
+              onSouthClick={handleSouthClick}
+              onEastClick={handleEastClick}
+              onWestClick={handleWestClick}
+            />
+            <TrainList
+              color={currColor}
+              selectedStations={selectedStations}
+              arrivalData={arrivalData}
+              showArrivingTrains={showArrivingTrains}
+              showScheduledTrains={showScheduledTrains}
+              isNorthboundActive={isNorthboundActive}
+              isSouthboundActive={isSouthboundActive}
+              isEastboundActive={isEastboundActive}
+              isWestboundActive={isWestboundActive}
+            />
           </div>
         )}
       </div>
