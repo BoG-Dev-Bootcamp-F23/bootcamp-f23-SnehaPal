@@ -12,7 +12,9 @@ export default function Train({ trainData }) {
             <h1>M</h1>
             <div className='trainInfo'>
                 <div className='stationInfo'>
-                    <p>Midtown Station - {stationName}</p>     
+                    <p>
+                        Midtown Station <img src={arrow} alt="-"/> {destination} Station
+                    </p>          
                 </div>
                 <div className='otherInfo'>
                     <div className='lineColor' style={{ backgroundColor: trainData.LINE.toLowerCase() }}>{lineColor}</div>
