@@ -1,6 +1,8 @@
 .body {
     display: flex;
-    flex-direction: row; /* Change to column to center vertically */
+    justify-content: space-between;
+    flex-direction: row; 
+    max-width: 100vh;
     gap: 50px;
 }
 
@@ -34,5 +36,5 @@ h2::after {
 .right {
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
   }
-  

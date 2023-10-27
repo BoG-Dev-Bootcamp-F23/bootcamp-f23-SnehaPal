@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Train.css"
+import arrow from "./1.png"
 
 export default function Train({ trainData }) {
   const isOnTime = trainData.DELAY === "T0S";
@@ -13,7 +14,9 @@ export default function Train({ trainData }) {
             <h1>M</h1>
             <div className='trainInfo'>
                 <div className='stationInfo'>
-                    <p>{departure} - {destination} Station</p>     
+                    <p>
+                        {departure} <img src={arrow} alt="-"/> {destination} Station
+                    </p>     
                 </div>
                 <div className='otherInfo'>
                     <div className='lineColor' style={{ backgroundColor: trainData.LINE.toLowerCase() }}>{lineColor}</div>

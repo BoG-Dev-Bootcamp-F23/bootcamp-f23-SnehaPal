@@ -2,9 +2,10 @@
   background-color: #095178;
   color: #fff;
   padding: 50px;
-  min-width: 18%;
+  min-width: 30vh;
   margin-top: -20px;
   margin-bottom: -20px;
+  height: 100%;
 }
 
 .heading {
@@ -35,5 +36,13 @@
 }
 
 .stationName:hover {
+  background-color: #123456;
+}
+
+.stationName.active {
+  text-align: left;
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.2s;
   background-color: #123456;
 }

@@ -18,6 +18,7 @@ export default function LinesPage() {
   const [isSouthboundActive, setIsSouthboundActive] = useState(true);
   const [isEastboundActive, setIsEastboundActive] = useState(true); 
   const [isWestboundActive, setIsWestboundActive] = useState(true); 
+  const [showAllStations, setShowAllStations] = useState(true);
 
   useEffect(() => {
     const arrivalUrl = `http://13.59.196.129:3001/arrivals/${currColor.toLowerCase()}`;
@@ -31,7 +32,12 @@ export default function LinesPage() {
     const stationUrl = `http://13.59.196.129:3001/stations/${currColor.toLowerCase()}`;
     fetch(stationUrl)
       .then((response) => response.json())
-      .then((data) => setStationData(data));
+      .then((data) => {
+        setStationData(data)
+        if (showAllStations) {
+          setSelectedStations(data);
+        }
+      })
   }, [currColor, selectedStations, showArrivingTrains, showScheduledTrains]);
 
   // COLOR BAR FUNCTIONALITY
@@ -43,15 +49,30 @@ export default function LinesPage() {
 
   // NAVBAR FUNCTIONALITY
   const handleStationClick = (station) => {
-    setSelectedStations((prevSelectedStations) => {
-      if (prevSelectedStations.includes(station)) {
-        return prevSelectedStations.filter((selected) => selected !== station);
-      } else {
-        return [...prevSelectedStations, station];
-      }
-    });
+    if (showAllStations) {
+      setShowAllStations(false);
+      setSelectedStations([station]);
+    } else {
+      setSelectedStations((selectedStations) => {
+        if (selectedStations.includes(station)) {
+          return selectedStations.filter((selected) => selected !== station);
+        } else {
+          return [...selectedStations, station];
+        }
+      });
+    }
     setLoading(true);
   };
+  
+  const handleAllStationsClick = () => {
+    if (showAllStations) {
+      setSelectedStations([]);
+    } else {
+      setSelectedStations(stationData);
+    }
+    setShowAllStations(!showAllStations);
+    setLoading(true);
+  };  
 
   // ARRIVING/SCHEDULED FUNCTIONALITY
 
@@ -88,12 +109,16 @@ export default function LinesPage() {
       <Colorbar onColorClick={handleColorClick} />
       <h2>{currColor}</h2>
       <div className="body">
-        <Navbar
-          color={currColor}
-          stationData={stationData}
-          onStationClick={handleStationClick}
-          selectedStations={selectedStations}
-        />
+        <div className='left'>
+          <Navbar
+            color={currColor}
+            stationData={stationData}
+            onStationClick={handleStationClick}
+            selectedStations={selectedStations}
+            allStationsClick={handleAllStationsClick}
+            showAllStations={showAllStations}
+          />
+        </div>
         {loading ? (
           <div className="loading-screen">Loading...</div>
         ) : (
@@ -106,6 +131,12 @@ export default function LinesPage() {
               onSouthClick={handleSouthClick}
               onEastClick={handleEastClick}
               onWestClick={handleWestClick}
+              showScheduledTrains={showScheduledTrains}
+              showArrivingTrains={showArrivingTrains}
+              isNorthboundActive={isNorthboundActive}
+              isSouthboundActive={isSouthboundActive}
+              isEastboundActive={isEastboundActive}
+              isWestboundActive={isWestboundActive}
             />
             <TrainList
               color={currColor}

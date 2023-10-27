@@ -1,59 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './MartaButtons.css';
 
-export default function MartaButtons({ color, onArrivingClick, onScheduledClick, onNorthClick, onSouthClick, onEastClick, onWestClick }) {
-  const [isArrivingActive, setIsArrivingActive] = useState(true);
-  const [isScheduledActive, setIsScheduledActive] = useState(true);
-
-  const [isNorthboundActive, setIsNorthboundActive] = useState(true); 
-  const [isSouthboundActive, setIsSouthboundActive] = useState(true); 
-  const [isEastboundActive, setIsEastboundActive] = useState(true); 
-  const [isWestboundActive, setIsWestboundActive] = useState(true); 
+export default function MartaButtons({ color, onArrivingClick, onScheduledClick, onNorthClick, onSouthClick, 
+    onEastClick, onWestClick, showArrivingTrains, showScheduledTrains, isNorthboundActive, isSouthboundActive, isEastboundActive, isWestboundActive }) {
 
   const isNorthSouth = color === 'RED' || color === 'GOLD';
-
-  const handleArrivingClick = () => {
-    setIsArrivingActive(!isArrivingActive);
-    onArrivingClick();
-  };
-
-  const handleScheduledClick = () => {
-    setIsScheduledActive(!isScheduledActive);
-    onScheduledClick();
-  };
-
-  const handleNorthClick = () => {
-    setIsNorthboundActive(!isNorthboundActive);
-    onNorthClick();
-  };
-
-  const handleSouthClick = () => {
-    setIsSouthboundActive(!isSouthboundActive);
-    onSouthClick();
-  };
-
-  const handleEastClick = () => {
-    setIsEastboundActive(!isEastboundActive);
-    onEastClick();
-  };
-
-  const handleWestClick = () => {
-    setIsWestboundActive(!isWestboundActive);
-    onWestClick();
-  };
-
 
   return (
     <div className="martaButtons">
       <button
-        className={`martaButton ${isArrivingActive ? 'active' : ''}`}
-        onClick={handleArrivingClick}
+        className={`martaButton ${showArrivingTrains ? 'active' : ''}`}
+        onClick={onArrivingClick}
       >
         Arriving
       </button>
       <button
-        className={`martaButton ${isScheduledActive ? 'active' : ''}`}
-        onClick={handleScheduledClick}
+        className={`martaButton ${showScheduledTrains ? 'active' : ''}`}
+        onClick={onScheduledClick}
       >
         Scheduled
       </button>
@@ -62,13 +25,13 @@ export default function MartaButtons({ color, onArrivingClick, onScheduledClick,
         <>
           <button
             className={`martaButton ${isNorthboundActive ? 'active' : ''}`}
-            onClick={handleNorthClick}
+            onClick={onNorthClick}
           >
             Northbound
           </button>
           <button
             className={`martaButton ${isSouthboundActive ? 'active' : ''}`}
-            onClick={handleSouthClick}
+            onClick={onSouthClick}
           >
             Southbound
           </button>
@@ -77,13 +40,13 @@ export default function MartaButtons({ color, onArrivingClick, onScheduledClick,
         <>
             <button
             className={`martaButton ${isEastboundActive ? 'active' : ''}`}
-            onClick={handleEastClick}
+            onClick={onEastClick}
           >
             Eastbound
           </button>
           <button
             className={`martaButton ${isWestboundActive ? 'active' : ''}`}
-            onClick={handleWestClick}
+            onClick={onWestClick}
           >
             Westbound
           </button>

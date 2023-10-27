@@ -67,3 +67,8 @@
 .train .otherInfo .onTime {
   color: #27ae60;
 }
+
+img {
+  height: 15px;
+  width: 20px;
+}
