@@ -1,0 +1,48 @@
+.navbar-container {
+  background-color: #095178;
+  color: #fff;
+  padding: 50px;
+  min-width: 30vh;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  height: 100%;
+}
+
+.heading {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.station-list {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.stationName {
+  text-align: left;
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.2s;
+}
+
+.stationName::before {
+  content: "";
+  border-bottom: 1px solid #474343;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.stationName:hover {
+  background-color: #123456;
+}
+
+.stationName.active {
+  text-align: left;
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.2s;
+  background-color: #123456;
+}

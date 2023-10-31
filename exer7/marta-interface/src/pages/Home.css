@@ -1,0 +1,86 @@
+/* Home.css */
+.homePage {
+    background-image: url('marta.png'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 51, 0.5);
+  }
+
+
+  .header {
+    color: white;
+    background-color: rgba(0, 0, 51, 0.5);
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .aboutPage {
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 20px;
+    position: relative;
+  }
+  
+  .aboutPage::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 5px;
+    background-color: #123456;
+    transition: width 0.3s;
+  }
+  
+  .aboutPage:hover::before {
+    width: 100%;
+  }
+  
+  .body{
+    display: flex;
+    align-items: center;
+  }
+
+  .routes {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .routes h1, .routes .h2 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .routes button {
+    background-color: transparent;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    margin: 5px;
+  }
+  
+  .routes button:hover {
+    background-color: #555;
+    cursor: pointer;
+  }
+  

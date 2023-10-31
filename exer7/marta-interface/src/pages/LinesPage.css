@@ -1,0 +1,39 @@
+.body {
+    display: flex;
+    flex-direction: row; 
+    max-width: 100%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px; 
+    margin-top: 10px;
+}
+
+h2::before {
+    content: "";
+    display: block;
+    width: 100vw;
+    height: 2px;
+    background-color: #0A639C; 
+    margin-top: 10px;
+    margin-bottom: 10px; 
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 100vw;
+    height: 2px;
+    background-color: #0A639C; 
+    margin-top: 10px;
+    margin-bottom: 20px; 
+}
+
+.right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }

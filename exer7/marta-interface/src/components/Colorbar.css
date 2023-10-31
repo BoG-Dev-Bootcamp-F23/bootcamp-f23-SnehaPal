@@ -1,0 +1,25 @@
+.colorbar-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 10px;
+  }
+  
+  .colorButton {
+    padding: 10px 50px;
+    font-size: 15px;
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .colorButton:hover {
+    background-color: #095178; /* Slightly darker color on hover */
+  }
+  
+  /* Style for selected button */
+  .selected {
+    background-color: #095178;
+  }
+  
