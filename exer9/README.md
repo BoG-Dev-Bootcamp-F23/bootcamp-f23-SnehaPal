@@ -6,6 +6,7 @@ In this exercise, bootcampers will familiarize themselves with MongoDB schemas/m
 ## Submission
 See the submission instructions down below.
 - **Due Date**: 11-7-2023
+- Link to Demo: https://www.loom.com/share/36c6ada9df83461a9e1bf1c329b8b232?sid=911171a6-875f-4602-b409-ff54bc849d3a
 
 ## Instructions
 
