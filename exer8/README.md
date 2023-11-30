@@ -6,8 +6,7 @@ In this exercise, bootcampers will familiarize themselves with Next.js, API Endp
 ## Submission
 See the submission instructions down below.
 - **Due Date**: 10-31-2023
-- Link:
-https://www.loom.com/share/f86a2c1748054c8b9162483b66555c54?sid=69c4d438-7861-469c-971b-2b10757b251c
+- Link: https://www.loom.com/share/f86a2c1748054c8b9162483b66555c54?sid=69c4d438-7861-469c-971b-2b10757b251c
 
 ## Instructions
 
